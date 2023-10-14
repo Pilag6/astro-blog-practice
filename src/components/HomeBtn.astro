@@ -1,0 +1,31 @@
+---
+interface Props {
+    name: string;
+    path: string;
+}
+
+const { name, path } = Astro.props as Props;
+---
+
+<a href={path}>{name}</a>
+
+<style>
+    a {
+        margin: 10px;
+        padding: 10px 16px;
+        background-color: azure;
+        color: #28213a;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border: 1px solid rgba(240, 255, 255, 0);
+        border-radius: 5px;
+        box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+        transition: all 0.2s ease-in-out; 
+    }
+
+    a:hover {
+        background-color: #28213a;
+        color: azure;
+        border: 1px solid azure;
+    }
+</style>

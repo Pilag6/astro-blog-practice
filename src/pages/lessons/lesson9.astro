@@ -1,0 +1,35 @@
+---
+// IMPORTS
+import LessonList from "../../components/LessonList.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+
+import { Icon } from 'astro-icon'
+---
+
+<!-- Astro + Libraries -->
+<MainLayout title="Lesson 9 | Astro">
+    <section class="general">
+        <h1>Lesson 9 | Astro + Libraries</h1>
+
+        <nav aria-label="Primary">
+            <a href="/" class="logomark" aria-label="Go Home">Home</a>
+            <Icon name="logomark" width="180" />
+        </nav>
+
+        <LessonList />
+    </section>
+   
+</MainLayout>
+
+
+
+
+
+<style>
+    p {
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 1.5rem;
+        text-align: center;
+        line-height: 1.5;
+    }
+</style>

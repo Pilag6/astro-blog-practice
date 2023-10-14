@@ -1,0 +1,31 @@
+---
+import MainHead from "@layouts/MainHead.astro";
+import Footer from "@components/Footer.astro";
+import Nav from "@components/Nav.astro";
+import "@styles/global.css";
+
+// TypeScript
+
+interface Props {
+    title: string;
+    description?: string; //? means optional
+
+}
+
+const { title, description } = Astro.props as Props; // as Props means the props is of type Props
+---
+
+<html lang="en">
+    <MainHead {title} description={description} /> 
+    <body>
+        <Nav />
+        <slot>Default Text</slot>
+        <Footer />
+    </body>
+</html>
+
+<style>
+
+
+</style>
+

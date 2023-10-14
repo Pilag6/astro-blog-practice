@@ -1,0 +1,103 @@
+---
+// IMPORTS
+import LessonList from "../../components/LessonList.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+
+
+// CSS VARIABLES
+
+const bgColor = "#f3f";
+const textColor = "yellow";
+
+// STATES
+
+const isRed = false;
+---
+
+<!-- All about Styling -->
+<MainLayout title="Lesson 6 | Astro">
+    <section class="general">
+        <h1>Lesson 6 | All about Styling</h1>
+
+        <h3>Different ways to style in Astro</h3>
+
+        <ol>
+
+            <!-- INLINE -->
+            <li>Inline</li>
+
+            <h3>Classic way</h3>
+            <p style="color: red">Hello world</p>
+
+            <h3>CSS & Javascript Inline</h3>
+            <p
+                style={{
+                    color: "white",
+                    backgroundColor: "black",
+                }}
+            >
+                Hola Mundo
+            </p>
+
+            <!-- SAME FILE -->
+
+            <li>
+                In the same file. In this case we can use the <code>{`<style></style>`}</code> tag. <br />
+                In the <code>{`<style></style>`}</code> tag we can use the
+                atribute <code>lang="scss"</code> and we can use scss syntax. <br/>
+                For that first we need to install the dependencies <code>npm i -D sass</code>
+            </li>
+            
+            <!-- VARIABLES -->
+
+            <div class="variables">
+                <h1>Variables</h1>
+                <h2>Hello</h2>
+                <h3>World</h3>
+            </div>
+
+
+            <!-- WITH STATE -->
+
+            <div class:list={[isRed ? "state" : "yellow"]}>
+                <h1>States</h1>
+                <h2>Hello from States</h2>
+            </div>
+
+            <li>
+                In a separate file. In that case we have to import this file. <br>
+                Normally, Astro suggests to create a new folder inside the src folder called <code>styles</code> and inside it a <code>global.css</code> where we can write our global styles. <br>
+
+                <p><code>global.css</code> we can import in the MainLayout</p>
+            </li>
+        </ol>
+    </section>
+
+    <LessonList />
+</MainLayout>
+
+<style define:vars={{bgColor, textColor}}> /* CSS VARIABLES */
+    ol {
+        font-size: 1.2rem;
+        margin: 2rem auto;
+    }
+
+    li {
+        margin: 0.5rem 0;
+    }
+
+    .variables {
+        background-color: var(--bgColor);
+        color: var(--textColor);
+    }
+
+    .state {
+        color: red;
+    }
+
+    .yellow {
+        color: yellow;
+    }
+
+   
+</style>

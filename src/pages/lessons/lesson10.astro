@@ -1,0 +1,50 @@
+---
+// IMPORTS
+import LessonList from "../../components/LessonList.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+
+import Link from "../../components/Link.astro";
+
+// DATA IMPORTS
+
+import navData from "../../data/navData.js";
+---
+
+<!-- Maping Data -->
+<MainLayout title="Lesson 9 | Astro">
+    <section class="general">
+        <h1>Lesson 10 | Maping Datas</h1>
+
+        <nav aria-label="Primary">
+            <ul>
+                {
+                    navData.map((item) => (
+                        <Link
+                            text={item.name}
+                            href={item.path}
+                            style="secondary"
+                            isFilled={true}
+                            borderVisible={true}
+                            data-navLink
+                            icon={{
+                                name: "uim:adobe",
+                                side: "left",
+                            }}
+                        />
+                    ))
+                }
+            </ul>
+        </nav>
+
+        <LessonList />
+    </section>
+</MainLayout>
+
+<style>
+    p {
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 1.5rem;
+        text-align: center;
+        line-height: 1.5;
+    }
+</style>

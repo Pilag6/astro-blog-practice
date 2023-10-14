@@ -1,0 +1,48 @@
+---
+import Link from "../components/Link.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout title="About" description="Astro Blog Tutorial">
+    <section class="container about" aria-label="About">
+        <img
+            src="/images/headshot.jpg"
+            alt="My headshot"
+            width="200"
+            height="330"
+        />
+
+		<div class="content">
+			<h1 class="h1">My Blog</h1>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit maxime sunt laboriosam consectetur, distinctio magni consequatur sit, quasi quidem odio inventore nobis asperiores dolorem beatae adipisci provident deserunt cupiditate! Quae a error itaque ut dolorem dignissimos illum similique hic consectetur.</p>
+
+			<Link text="Contact Me" href="#" style="primary" isFilled={false} borderVisible={true} />
+		</div>
+    </section>
+</MainLayout>
+
+<style>
+	.about {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 2rem;
+		padding: 1rem;
+		margin: 140px auto;
+		border: 1px solid #fff;
+		width: 600px;
+		border-radius: 5px;
+		box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+		background-color: azure;
+		color: #28213a;
+	}
+
+	.content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+
+	}
+</style>

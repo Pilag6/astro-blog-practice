@@ -1,0 +1,87 @@
+---
+interface Props {
+    text: string;
+    href: string;
+    style: "primary" | "secondary";
+    icon?: {
+        name: string;
+        side: "left" | "right";
+    };
+    isFilled?: boolean;
+    borderVisible?: boolean;
+    classes?: string;
+}
+
+const {
+    text,
+    href,
+    style,
+    icon,
+    isFilled = true,
+    borderVisible = false,
+    classes,
+    ...rest
+} = Astro.props;
+
+import { Icon } from "astro-icon";
+---
+
+<a
+    href={href}
+    class:list={[
+        "link",
+        classes,
+        style,
+        { filled: isFilled, bordered: borderVisible },
+    ]}
+    {...rest}
+>
+    {
+        icon && icon.side === "left" && (
+            <Icon name={icon.name} width="24" height="24" />
+        )
+    }
+
+    <span>{text}</span>
+
+    {
+        icon && icon.side === "right" && (
+            <Icon name={icon.name} width="24" height="24" />
+        )
+    }
+</a>
+
+<style>
+    a {
+        color: #28213a;
+    }
+
+    .link {
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        transition: all 0.2s ease-in-out;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: bold;
+        background-color: azure;
+        border: 1px solid #28213a;
+    }
+
+    .link * {
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .link.filled {
+        background-color: #28213a;;
+        color: azure;
+    }
+
+    .link.bordered {
+        border: 1px solid #28213a;
+    }
+
+    .link:hover {
+        opacity: 0.8;
+    }
+</style>

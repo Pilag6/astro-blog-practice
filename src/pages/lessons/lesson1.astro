@@ -1,0 +1,56 @@
+---
+// IMPORTS
+import LessonList from "@components/LessonList.astro"
+import MainLayout from "@layouts/MainLayout.astro";
+
+// JAVASCRIPT
+
+const str = "Pila";
+const num = 42;
+const obj = {
+    name: str,
+    number: num,
+    favorites: ["Astro", "React", "Vue"],
+};
+
+const isVisible = false;
+---
+
+<!-- How to use Javascript inside Astro -->
+
+<MainLayout title="Lesson 1 | Astro">
+
+    <section class="general">
+        <h1>Lesson 1 | How to use Astro</h1>
+    
+            <h2>{str}</h2>
+            <h3>{num}</h3>
+    
+            <!-- isVisible one option -->
+    
+            {
+                isVisible ? (
+                    <p>
+                        Mi favourite Framework Web is{" "}
+                        {obj.favorites[0].toLocaleUpperCase()}
+                    </p>
+                ) : (
+                    <p>
+                        Mi favourite Framework Web is{" "}
+                        {obj.favorites[1].toLocaleUpperCase()}
+                    </p>
+                )
+            }
+    
+            <!-- Another option to use isVisible -->
+            <p>
+                Mi favourite Framework Web is {
+                    isVisible ? obj.favorites[0] : obj.favorites[1]
+                }
+            </p>
+
+            <LessonList />
+    </section>
+
+</MainLayout>
+

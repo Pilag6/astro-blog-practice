@@ -1,0 +1,22 @@
+---
+import HomeBtn from "./HomeBtn.astro";
+---
+
+<nav>
+    <HomeBtn name="Home" path="/"/>
+    <HomeBtn name="About" path="/about"/>
+    <HomeBtn name="Blog" path="/blog"/>
+</nav>
+
+<style>
+    nav {
+        height: 2px;
+        margin: 0 auto 80px auto;
+        border-top: 1px solid white;
+        background: azure;
+        position: fixed;
+        top: 0;
+        left: 10%;
+        right: 10%;
+    }
+</style>

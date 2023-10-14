@@ -1,0 +1,28 @@
+---
+// IMPORTS
+import LessonList from "../../components/LessonList.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+
+const str = "Pila";
+const num = 42;
+const obj = {
+    name: str,
+    number: num,
+    favorites: ["Astro", "React", "Vue", "Angular", "Svelte", "Next"],
+};
+
+const isVisible = false;
+---
+
+<!-- Looping from a data object -->
+<MainLayout title="Lesson 2 | Astro">
+    <section class="general">
+        <h1>Lesson 2 | Looping from a data object</h1>
+
+        <ul>
+            {obj.favorites.map((item) => <li>{item}</li>)}
+        </ul>
+
+        <LessonList />
+    </section>
+</MainLayout>

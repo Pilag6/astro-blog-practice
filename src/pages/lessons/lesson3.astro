@@ -1,0 +1,59 @@
+---
+// IMPORTS
+import LessonList from "../../components/LessonList.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+
+// Is await because in Astro, behind the scenes, 
+// in this top level section it's wrap in an asynchronous function
+
+const res = await fetch("https://jsonplaceholder.typicode.com/users?_limit=10");
+const data = await res.json();
+---
+
+<!-- Fetching data -->
+
+
+<MainLayout title="Lesson 3 | Fetching data">
+        <h1>Lesson 3 | Fetching data</h1>
+        <div class="flex">
+            {   
+                data.map((item: any) => (
+                    <ul>
+                        <li>Name: {item.name}</li>
+                        <li>Username: {item.username}</li>
+                        <li>Email: {item.email}</li>
+                        <li>Website: {item.website}</li>
+                        <li>Phone: {item.phone}</li>
+                        <li>Address: {item.address.street}</li>
+                        <li>City: {item.address.city}</li>
+                    </ul>
+                ))
+            }
+        </div>
+
+        <LessonList />
+
+</MainLayout>  
+
+<style>
+
+    h1 {
+        text-align: center;
+    }
+    ul {
+        font-size: 1.2rem;
+        margin: 2rem;
+        list-style: circle;
+        padding: 1rem 2rem;
+        width: 300px;
+        border: 1px solid #fff;
+    }
+
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+    }
+</style>
+

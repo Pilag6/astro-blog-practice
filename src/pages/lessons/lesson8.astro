@@ -1,0 +1,49 @@
+---
+// IMPORTS
+import LessonList from "../../components/LessonList.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+---
+
+<!-- Javascript on the Client -->
+<MainLayout title="Lesson 8 | Astro">
+    <section class="general">
+        <h1>Lesson 8 | Javascript on the Client</h1>
+
+        <p>
+            To use Javascript on the Client we have to write the Javascript code
+
+            <br />in the <code>{`<script}`}</code> tag in the <code
+                >MainHead.astro</code
+            >
+        </p>
+        <br><br>
+
+        <h2>Example</h2>
+        <p>
+            Today is: <span id="today"></span><br />
+            And it is <span id="time"></span> hr
+        </p>
+    </section>
+    <LessonList />
+</MainLayout>
+
+
+
+<script>
+    document.querySelector("#today").innerHTML = new Date().toLocaleDateString();
+
+// or 
+
+//  document.querySelector("#today").innerHTML = new Date().getDate().toString();
+
+    document.querySelector("#time").textContent = new Date().toLocaleTimeString();
+</script>
+
+<style>
+    p {
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 1.5rem;
+        text-align: center;
+        line-height: 1.5;
+    }
+</style>

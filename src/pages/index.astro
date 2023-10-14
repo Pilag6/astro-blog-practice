@@ -1,0 +1,37 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import LessonList from "../components/LessonList.astro";
+---
+
+<MainLayout title="Astro" description="Astro Blog Tutorial">
+    <LessonList />
+
+    <div class="blog-post">
+        <h1>Mi blog de aprendizaje sobre Astro</h1>
+        <p>Aquí es donde publicaré acerca de mi viaje aprendiendo Astro.</p>
+        <ul>
+            <li><a href="/posts/post-1/">Publicación 1</a></li>
+            <li><a href="/posts/paises/albania/post-2/">Publicación 2</a></li>
+            <li><a href="/posts/paises//croacia/post-3/">Publicación 3</a></li>
+        </ul>
+    </div>
+</MainLayout>
+
+<style>
+    .blog-post {
+        width: 50%;
+        margin: 20px auto;
+        padding: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: azure;
+        color: #28213a;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-align: center;
+        box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+        transition: all 0.2s ease-in-out;
+    }
+
+
+</style>
