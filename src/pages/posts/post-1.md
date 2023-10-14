@@ -1,6 +1,6 @@
 ---
 title: 'Mi Primer Blog con Astro'
-pubDate: 2022-08-01
+pubDate: "2022-11-08 11:39"
 description: 'Este es la primera publicación de mi nuevo blog Astro.'
 author: 'Pila Gonzalez'
 image:

@@ -169,6 +169,86 @@ import Component from "../components/nameOfComponent.astro";
 </>
 ```
 
+# Post Layout
+
+```javascript
+---
+import MainHead from "@layouts/MainHead.astro";
+import Footer from "@components/Footer.astro";
+import Nav from "@components/Nav.astro";
+import "@styles/global.css";
+import { getFormattedDate } from "@utils/formateDate";
+
+const {frontmatter} = Astro.props;
+---
+
+<html lang="en">
+    <MainHead title={frontmatter.title} description={frontmatter.description} /> 
+    <body>
+        <Nav />
+        <main>
+            <section>
+                <h1>{frontmatter.title}</h1>
+                <div class="second-line">
+                    <p>{frontmatter.author}</p>
+                    <span>|</span>
+                    <time datetime={frontmatter.pubDate}>
+                    {getFormattedDate(frontmatter.pubDate)}
+                    </time>
+                </div>
+                <img src={frontmatter.image.url} alt={frontmatter.image.alt}>
+                
+            </section>
+            <slot>Default Text</slot>
+        </main>
+        <Footer />
+    </body>
+</html>
+
+<style>
+
+    main {
+        margin: 0 auto;
+        max-width: 600px;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    .second-line {
+        display: flex;
+        gap: 1rem;
+    }
+
+</style>
+```
+
+# Individual Post Markdown
+
+```javascript
+---
+title: 'Mi Primer Blog con Astro'
+pubDate: "2022-11-08 11:39"
+description: 'Este es la primera publicación de mi nuevo blog Astro.'
+author: 'Pila Gonzalez'
+image:
+    url: 'https://docs.astro.build/assets/full-logo-light.png'
+    alt: 'El logotipo completo de Astro.'
+tags: ["astro", "bloguear", "aprender en público"]
+layout: '@layouts/PostLayout.astro'
+---
+
+The Rest of the Markdown Content
+```
+
 ## Time/Date Format
 
 ** src/utils/formatDate.js **
