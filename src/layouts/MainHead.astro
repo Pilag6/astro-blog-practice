@@ -2,6 +2,7 @@
 const { title, description } = Astro.props;
 
 import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
+import ResetCSS from "@appzic/astro-reset-css"
 ---
 
 <head>
@@ -12,6 +13,7 @@ import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
     <meta name="description" content={description} />
     <title>{title}</title>
 
+    <ResetCSS/>
     <!-- Google Fonts -->
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

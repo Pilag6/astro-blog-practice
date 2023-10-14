@@ -1,20 +1,7 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-    list-style: none;
+    scroll-behavior:smooth; /* For smooth scrolling. */
 }
 
-img {
-    max-width: 100%;
-    object-fit: cover;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
 
 h1 {
     text-align: center;
@@ -32,6 +19,8 @@ body {
 body {
     background: linear-gradient(-45deg, #28213a, #213a3a, #380539, #28213a);
     background-size: 400% 400%;
+    background-size: cover;
+    background-repeat: no-repeat;
     animation: gradient 15s ease infinite;
 }
 

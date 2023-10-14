@@ -66,6 +66,12 @@ const { title, description } = Astro.props; // as Props means the props is of ty
 
 ```javascript
   npm install astro-google-fonts-optimizer
+  
+```
+
+```javascript
+  npm install @appzic/astro-reset-css
+  
 ```
 
 ```javascript
@@ -83,6 +89,9 @@ const { title, description } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <title>{title}</title>
+
+    <!-- Reset CSS -->
+    <ResetCSS/>
 
     <!-- Google Fonts -->
     <GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&display=swap"></GoogleFontsOptimizer>
@@ -104,7 +113,11 @@ const { title, description } = Astro.props;
             "@icons/*": ["src/icons/*"],
             "@pages/*": ["src/pages/*"],
             "@public/*": ["public/*"],
-            "@styles/*": ["src/styles/*"]
+            "@styles/*": ["src/styles/*"],
+            "@utils/*": ["src/utils/*"],
+            "@hooks/*": ["src/hooks/*"],
+            "@types/*": ["src/types/*"],
+
         }
     }
 }
@@ -154,4 +167,44 @@ import Component from "../components/nameOfComponent.astro";
   <Component title="Card" description="Some words" style="card2" />
   <Component title="Card" description="Some words" style="card3" />
 </>
+```
+
+## Time/Date Format
+
+** src/utils/formatDate.js **
+
+```javascript
+// OPTION 1 (English)
+
+// export const getFormattedDate = (date) =>
+//     date
+//         ? new Date(date).toLocaleDateString("en-us", {
+//               year: "numeric",
+//               month: "short",
+//               day: "numeric",
+//           })
+//         : "";
+
+// Returns a date in the format of "Jan 1, 2020"
+
+// ----------------------------------------------------------------------
+
+// OPTION 2 (English)
+
+export const getFormattedDate = (date) => {
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    return new Date(date).toLocaleDateString("en-US", options);
+}
+
+// Returns a date in the format of "January 1, 2020"
+// ----------------------------------------------------------------------
+
+// OPTION 3 (Spanish)
+
+// export const getFormattedDate = (date) => {
+//     const options = { year: "numeric", month: "long", day: "numeric" };
+//     return new Date(date).toLocaleDateString("es-ES", options);
+// }
+
+// Returns a date in the format of "1 de enero de 2020"
 ```

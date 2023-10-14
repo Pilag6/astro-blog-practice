@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@appzic/astro-reset-css": "^1.1.0",
     "astro": "^3.0.5",
     "astro-google-fonts-optimizer": "^0.2.2",
     "astro-icon": "^0.8.1"

@@ -19,13 +19,21 @@ const { title, description } = Astro.props as Props; // as Props means the props
     <MainHead {title} description={description} /> 
     <body>
         <Nav />
-        <slot>Default Text</slot>
+        <main>
+            <slot>Default Text</slot>
+        </main>
         <Footer />
     </body>
 </html>
 
 <style>
+    body {
+        min-height: 100vh;
+    }
 
+    main {
+        margin-top: 101px;
+    }
 
 </style>
 

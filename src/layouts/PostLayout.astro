@@ -1,0 +1,71 @@
+---
+import MainHead from "@layouts/MainHead.astro";
+import Footer from "@components/Footer.astro";
+import Nav from "@components/Nav.astro";
+import "@styles/global.css";
+import { getFormattedDate } from "@utils/formateDate";
+// TypeScript
+
+// interface Props {
+//     frontmatter: {
+//         title: string;
+//         description?: string;
+//     }
+
+// }
+
+const {frontmatter} = Astro.props // as Props means the props is of type Props
+---
+
+<html lang="en">
+    <MainHead title={frontmatter.title} description={frontmatter.description} /> 
+    <body>
+        <Nav />
+        <main>
+            <section>
+                <h1>{frontmatter.title}</h1>
+                <div class="second-line">
+                    <p>{frontmatter.author}</p>
+                    <span>|</span>
+                    <time datetime={frontmatter.pubDate}>
+                    {getFormattedDate(frontmatter.pubDate)}
+                    </time>
+                </div>
+                <img src={frontmatter.image.url} alt={frontmatter.image.alt}>
+                
+            </section>
+            <slot>Default Text</slot>
+        </main>
+        <Footer />
+    </body>
+</html>
+
+<style>
+    body {
+        min-height: 100vh;
+    }
+
+    main {
+        margin: 101px auto 0 auto;
+        max-width: 600px;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    .second-line {
+        display: flex;
+        gap: 1rem;
+    }
+
+</style>
+
+@utils/formateDate
