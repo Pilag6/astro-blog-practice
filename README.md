@@ -36,10 +36,9 @@ There's nothing special about `src/components/`, but that's where we like to put
 
 Any static assets, like images, can be placed in the `public/` directory.
 
+# MainLayout
 
-# MainLayout 
-
-``` javascript
+```javascript
 ---
 
 // Components
@@ -54,7 +53,7 @@ const { title, description } = Astro.props; // as Props means the props is of ty
 ---
 
 <html lang="en">
-    <MainHead {title} description={description} /> 
+    <MainHead {title} description={description} />
     <body>
         <Nav />
         <slot>Default Text</slot>
@@ -65,9 +64,15 @@ const { title, description } = Astro.props; // as Props means the props is of ty
 
 # MainHead
 
-``` javascript
+```javascript
+  npm install astro-google-fonts-optimizer
+```
+
+```javascript
 
 ---
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
+
 const { title, description } = Astro.props;
 ---
 
@@ -80,33 +85,28 @@ const { title, description } = Astro.props;
     <title>{title}</title>
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&display=swap"
-        rel="stylesheet"
-    />
-
+    <GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&display=swap"></GoogleFontsOptimizer>
+</head>
 ```
 
 # tsconfig.json
 
-``` json
+```json
 {
-  "extends": "astro/tsconfigs/base",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@components/*": ["src/components/*"],
-      "@data/*": ["src/data/*"],
-      "@assets/*": ["src/assets/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@icons/*": ["src/icons/*"],
-      "@pages/*": ["src/pages/*"],
-      "@public/*": ["public/*"],
-      "@styles/*": ["src/styles/*"],
+    "extends": "astro/tsconfigs/base",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@components/*": ["src/components/*"],
+            "@data/*": ["src/data/*"],
+            "@assets/*": ["src/assets/*"],
+            "@layouts/*": ["src/layouts/*"],
+            "@icons/*": ["src/icons/*"],
+            "@pages/*": ["src/pages/*"],
+            "@public/*": ["public/*"],
+            "@styles/*": ["src/styles/*"]
+        }
     }
-  }
 }
 ```
 
@@ -114,7 +114,7 @@ const { title, description } = Astro.props;
 
 ## components/nameOfComponent
 
-``` javascript
+```javascript
 ---
 import type { Props } from "astro";
 const { title, description, style } = Astro.props as Props;
@@ -141,16 +141,17 @@ const { title, description, style } = Astro.props as Props;
         background-image: url("https://bit.ly/45i5H12");
     }
 
-  ```
+```
 
-  ## pages/index.astro
+## pages/index.astro
 
-  ``` javascript
-  ---
-  import Component from "../components/nameOfComponent.astro";
+```javascript
+---
+import Component from "../components/nameOfComponent.astro";
 
-  <>
-    <Component title="Card" description="Some words" style="card1" />
-    <Component title="Card" description="Some words" style="card2" />
-    <Component title="Card" description="Some words" style="card3" />
-  </>
+<>
+  <Component title="Card" description="Some words" style="card1" />
+  <Component title="Card" description="Some words" style="card2" />
+  <Component title="Card" description="Some words" style="card3" />
+</>
+```

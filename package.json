@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "astro": "^3.0.5",
+    "astro-google-fonts-optimizer": "^0.2.2",
     "astro-icon": "^0.8.1"
   },
   "devDependencies": {
