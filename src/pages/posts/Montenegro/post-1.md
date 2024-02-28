@@ -1,13 +1,14 @@
 ---
+layout: '@layouts/PostLayout.astro'
 title: 'Mi Primer Blog con Astro'
-pubDate: "2022-11-08 11:39"
+pubDate: "2021-11-08 11:39"
 description: 'Este es la primera publicación de mi nuevo blog Astro.'
 author: 'Pila Gonzalez'
 image:
-    url: 'https://docs.astro.build/assets/full-logo-light.png'
+    url: 'https://docs.astro.build/assets/full-logo-dark.png'
     alt: 'El logotipo completo de Astro.'
 tags: ["astro", "bloguear", "aprender en público"]
-layout: '@layouts/PostLayout.astro'
+
 ---
 
 ¡Bienvenido a mi _nuevo blog_ sobre el aprendizaje de Astro! Aquí, voy a compartir mi viaje de aprendizaje a medida que construyo un nuevo sitio web.

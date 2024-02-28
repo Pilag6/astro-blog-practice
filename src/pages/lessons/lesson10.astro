@@ -1,13 +1,13 @@
 ---
 // IMPORTS
-import LessonList from "../../components/LessonList.astro";
-import MainLayout from "../../layouts/MainLayout.astro";
+import LessonList from "@components/LessonList.astro";
+import MainLayout from "@layouts/MainLayout.astro";
 
-import Link from "../../components/Link.astro";
+import Link from "@components/Link.astro";
 
 // DATA IMPORTS
 
-import navData from "../../data/navData.js";
+import navData from "@data/navData.js";
 ---
 
 <!-- Maping Data -->
@@ -18,6 +18,9 @@ import navData from "../../data/navData.js";
         <nav aria-label="Primary">
             <ul>
                 {
+
+
+
                     navData.map((item) => (
                         <Link
                             text={item.name}

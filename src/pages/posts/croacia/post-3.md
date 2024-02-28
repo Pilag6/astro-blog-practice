@@ -1,4 +1,5 @@
 ---
+layout: '@layouts/PostLayout.astro'
 title: Mi tercera publicación en el blog
 author: Astro alumno
 description: "Tuve algunos problemas, pero preguntar en la comunidad me ayudó mucho."

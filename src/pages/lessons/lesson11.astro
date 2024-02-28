@@ -1,0 +1,33 @@
+---
+// IMPORTS
+import LessonList from "@components/LessonList.astro";
+import MainLayout from "@layouts/MainLayout.astro";
+
+import GoogleSheet from "@components/GoogleSheet.astro";
+
+
+---
+
+<!-- Maping Data -->
+<MainLayout title="Lesson 10 | Astro">
+    <section class="general">
+        <h1>Lesson 11 | Fetching Data with Google Sheet</h1>
+
+        <nav aria-label="Primary">
+            <ul>
+                <GoogleSheet />
+            </ul>
+        </nav>
+
+        <LessonList />
+    </section>
+</MainLayout>
+
+<style>
+    p {
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 1.5rem;
+        text-align: center;
+        line-height: 1.5;
+    }
+</style>

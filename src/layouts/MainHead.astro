@@ -1,6 +1,6 @@
 ---
 const { title, description } = Astro.props;
-
+import { ViewTransitions } from 'astro:transitions';
 import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 import ResetCSS from "@appzic/astro-reset-css"
 ---
@@ -12,6 +12,7 @@ import ResetCSS from "@appzic/astro-reset-css"
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <title>{title}</title>
+    <ViewTransitions />
 
     <ResetCSS/>
     <!-- Google Fonts -->

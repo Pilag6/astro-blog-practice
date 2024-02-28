@@ -1,0 +1,20 @@
+---
+// IMPORTS
+import LessonList from "@components/LessonList.astro";
+import ReactComponent from "@components/ReactComponent";
+import MainLayout from "@layouts/MainLayout.astro";
+
+---
+
+<!-- Maping Data -->
+<MainLayout title="Lesson 10 | Astro">
+    <section class="general">
+        <h1>Lesson 12 | React in Astro</h1>
+
+        <ReactComponent client:load/>
+        <LessonList />
+    </section>
+</MainLayout>
+
+<style>
+</style>

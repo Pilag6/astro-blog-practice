@@ -11,12 +11,17 @@
   },
   "dependencies": {
     "@appzic/astro-reset-css": "^1.1.0",
+    "@astrojs/react": "^3.0.3",
+    "@types/react": "^18.2.28",
+    "@types/react-dom": "^18.2.13",
     "astro": "^3.0.5",
     "astro-google-fonts-optimizer": "^0.2.2",
-    "astro-icon": "^0.8.1"
+    "astro-icon": "^0.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "prettier": "3.0.3",
-    "prettier-plugin-astro": "0.12.0"
+    "prettier": "^3.0.3",
+    "prettier-plugin-astro": "^0.12.0"
   }
 }
