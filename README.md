@@ -102,22 +102,11 @@ const { title, description } = Astro.props;
 
 ```json
 {
-    "extends": "astro/tsconfigs/base",
+    "extends": "astro/tsconfigs/strict",
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
-            "@components/*": ["src/components/*"],
-            "@data/*": ["src/data/*"],
-            "@assets/*": ["src/assets/*"],
-            "@layouts/*": ["src/layouts/*"],
-            "@icons/*": ["src/icons/*"],
-            "@pages/*": ["src/pages/*"],
-            "@public/*": ["public/*"],
-            "@styles/*": ["src/styles/*"],
-            "@utils/*": ["src/utils/*"],
-            "@hooks/*": ["src/hooks/*"],
-            "@types/*": ["src/types/*"],
-
+            "@*": ["src/*"]
         }
     }
 }
